@@ -1,0 +1,16 @@
+{
+    "name": "vdlp/oc-glide-plugin",
+    "description": "Allows developers to easily manipulate images in October CMS powered websites.",
+    "type": "october-plugin",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Van der Let & Partners",
+            "email": "octobercms@vdlp.nl"
+        }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "league/glide-laravel": "^1.0"
+    }
+}
