@@ -11,7 +11,9 @@ Glide is a wonderfully easy on-demand image manipulation library written in PHP.
 
 *CLI:*
 
-`php artisan plugin:install Vdlp.Glide`
+```
+php artisan plugin:install Vdlp.Glide
+```
 
 *October CMS:*
 
@@ -21,7 +23,9 @@ Go to Settings > Updates & Plugins > Install plugins and search for 'Glide'.
 
 To configure this plugin execute the following command:
 
-`php artisan vendor:publish --provider="Vdlp\Glide\ServiceProviders\GlideServiceProvider" --tag="config"`
+```
+php artisan vendor:publish --provider="Vdlp\Glide\ServiceProviders\GlideServiceProvider" --tag="config"
+```
 
 This will create a `config/glide.php` file in your app where you can modify the configuration.
 
