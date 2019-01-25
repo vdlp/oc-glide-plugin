@@ -6,6 +6,7 @@ namespace Vdlp\Glide;
 
 use League\Flysystem\Config;
 use System\Classes\PluginBase;
+use Throwable;
 use Vdlp\Glide\Classes\GlideManager;
 use Vdlp\Glide\ServiceProviders\GlideServiceProvider;
 
@@ -53,10 +54,15 @@ class Plugin extends PluginBase
                     /** @var GlideManager $glideManager */
                     $glideManager = resolve(GlideManager::class);
 
-                    /** @var Config $config */
-                    /** @noinspection PhpUndefinedMethodInspection */
-                    $config = $glideManager->server($servername)->getCache()->getConfig();
-                    return $config->get('url', '') . $glideManager->server($servername)->makeImage($path, $options);
+                    try {
+                        /** @var Config $config */
+                        /** @noinspection PhpUndefinedMethodInspection */
+                        $config = $glideManager->server($servername)->getCache()->getConfig();
+                        return $config->get('url', '') . $glideManager->server($servername)->makeImage($path, $options);
+                    } catch (Throwable $e) {
+                        // TODO: Proper exception handling.
+                        return '';
+                    }
                 },
             ],
         ];
