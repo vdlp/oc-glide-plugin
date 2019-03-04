@@ -46,25 +46,37 @@ class Plugin extends PluginBase
     {
         return [
             'filters' => [
-                'thumb' => function (string $path = null, array $options = [], string $servername = null): string {
-                    if ($path === null) {
-                        return '';
-                    }
-
-                    /** @var GlideManager $glideManager */
-                    $glideManager = resolve(GlideManager::class);
-
-                    try {
-                        /** @var Config $config */
-                        /** @noinspection PhpUndefinedMethodInspection */
-                        $config = $glideManager->server($servername)->getCache()->getConfig();
-                        return $config->get('url', '') . $glideManager->server($servername)->makeImage($path, $options);
-                    } catch (Throwable $e) {
-                        // TODO: Proper exception handling.
-                        return '';
-                    }
-                },
+                'thumb' => [self::class, 'thumb'],
             ],
         ];
+    }
+    
+    /**
+     * Generate a thumbnail and return the image path
+     *
+     * @param string|null $path
+     * @param array $options
+     * @param string|null $servername
+     *
+     * @return string
+     */
+    public static function thumb(string $path = null, array $options = [], string $servername = null): string
+    {
+        if ($path === null) {
+            return '';
+        }
+
+        /** @var GlideManager $glideManager */
+        $glideManager = resolve(GlideManager::class);
+
+        try {
+            /** @var Config $config */
+            /** @noinspection PhpUndefinedMethodInspection */
+            $config = $glideManager->server($servername)->getCache()->getConfig();
+            return $config->get('url', '') . $glideManager->server($servername)->makeImage($path, $options);
+        } catch (Throwable $e) {
+            // TODO: Proper exception handling.
+            return '';
+        }
     }
 }
