@@ -8,6 +8,7 @@ use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Filesystem\FilesystemManager;
 use October\Rain\Support\ServiceProvider;
+use Vdlp\Glide\Classes\GlideHelper;
 use Vdlp\Glide\Classes\GlideManager;
 
 /**
@@ -38,6 +39,12 @@ class GlideServiceProvider extends ServiceProvider
             return new GlideManager(
                 $container->make(Repository::class),
                 $container->make(FilesystemManager::class)
+            );
+        });
+
+        $this->app->singleton(GlideHelper::class, function (Container $container): GlideHelper {
+            return new GlideHelper(
+                $container->make(GlideManager::class)
             );
         });
     }
