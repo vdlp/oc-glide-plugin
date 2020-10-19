@@ -6,7 +6,7 @@ namespace Vdlp\Glide\ServiceProviders;
 
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Container\Container;
-use Illuminate\Filesystem\FilesystemManager;
+use October\Rain\Filesystem\FilesystemManager;
 use October\Rain\Support\ServiceProvider;
 use Vdlp\Glide\Classes\GlideHelper;
 use Vdlp\Glide\Classes\GlideManager;
