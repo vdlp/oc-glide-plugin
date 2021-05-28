@@ -2,3 +2,4 @@
 1.0.1: Catch exception when file cannot be found or image could not be created.
 1.1.0: Move thumbnail generation logic to a (re-usable) Helper.
 2.0.0: !!! October Build 1.1.0 required, make laravel 6 compatible.
+2.0.1: Update plugin dependencies
