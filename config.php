@@ -29,41 +29,41 @@ return [
 
     'servers' => [
         'main' => [
-            # Source filesystem
+            // Source filesystem
             'source' => 'local',
 
-            # Source filesystem path prefix
+            // Source filesystem path prefix
             'source_path_prefix' => '',
 
-            # Cache filesystem
+            // Cache filesystem
             'cache' => 'local',
 
-            # Cache filesystem path prefix
+            // Cache filesystem path prefix
             'cache_path_prefix' => '.cache',
 
-            # Watermarks filesystem
+            // Watermarks filesystem
             'watermarks' => 'local',
 
-            # Watermarks filesystem path prefix
+            // Watermarks filesystem path prefix
             'watermarks_path_prefix' => '',
 
-            # Image driver (gd or imagick)
+            // Image driver (gd or imagick)
             'driver' => env('GLIDE_IMAGE_DRIVER', 'gd'),
 
-            # Image size limit
+            // Image size limit
             'max_image_size' => 2000 * 2000,
 
-            # Secure your Glide image server with HTTP signatures.
+            // Secure your Glide image server with HTTP signatures.
             'signatures' => true,
 
-            # Sign Key - A 128 character (or larger) signing key is recommended.
+            // Sign Key - A 128 character (or larger) signing key is recommended.
             'sign_key' => env('GLIDE_SIGN_KEY'),
 
-            # Base URL of the images
-            'base_url' => '',
+            // Base URL of the images
+            'base_url' => '/storage/app',
 
-            # Default image manipulations
-            # see http://glide.thephpleague.com/1.0/config/defaults-and-presets/
+            // Default image manipulations
+            // see http://glide.thephpleague.com/1.0/config/defaults-and-presets/
             'defaults' => [
                 // Examples:
                 // 'mark' => 'logo.png',
@@ -71,8 +71,8 @@ return [
                 // 'markpad' => '5w',
             ],
 
-            # Preset image manipulations
-            # see http://glide.thephpleague.com/1.0/config/defaults-and-presets/
+            // Preset image manipulations
+            // see http://glide.thephpleague.com/1.0/config/defaults-and-presets/
             'presets' => [
                 // Examples:
                 // 'small' => [
