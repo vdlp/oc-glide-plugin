@@ -4,52 +4,37 @@ declare(strict_types=1);
 
 namespace Vdlp\Glide\Classes;
 
+use League\Glide\Urls\UrlBuilderFactory;
 use Throwable;
-use League\Flysystem\Config;
 
-/**
- * Class GlideHelper
- *
- * @package Vdlp\Glide\Classes
- */
 class GlideHelper
 {
-    /**
-     * @var GlideManager
-     */
-    private $manager;
+    private GlideManager $manager;
 
-    /**
-     * @param GlideManager $manager
-     */
     public function __construct(GlideManager $manager)
     {
         $this->manager = $manager;
     }
 
-    /**
-     * @param string|null $path
-     * @param array $options
-     * @param string|null $servername
-     * @return string
-     */
-    public function createThumbnail(string $path = null, array $options = [], string $servername = null): string
+    public function createThumbnail(?string $path = null, array $options = [], ?string $servername = null): string
     {
-        if ($path === null) {
+        if ($path === null || $path === '') {
             return '';
         }
 
-        try {
-            /** @var Config $config */
-            /** @noinspection PhpUndefinedMethodInspection */
-            $config = $this->manager->server($servername)
-                ->getCache()
-                ->getConfig();
+        $servername ??= $this->manager->getDefaultServer();
 
-            return $config->get('url', '')
-                . $this->manager->server($servername)->makeImage($path, $options);
+        try {
+            $this->manager->server($servername)
+                ->makeImage($path, $options);
+
+            $factory = UrlBuilderFactory::create(
+                '/images/' . ($servername ?? 'main') . '/',
+                config(sprintf('glide.servers.%s.sign_key', $servername))
+            );
+
+            return $factory->getUrl($path, $options);
         } catch (Throwable $e) {
-            // TODO: Proper exception handling.
             return '';
         }
     }

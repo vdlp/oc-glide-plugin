@@ -6,18 +6,9 @@ namespace Vdlp\Glide;
 
 use System\Classes\PluginBase;
 use Vdlp\Glide\Classes\GlideHelper;
-use Vdlp\Glide\ServiceProviders\GlideServiceProvider;
 
-/**
- * Class Plugin
- *
- * @package Vdlp\Glide
- */
 class Plugin extends PluginBase
 {
-    /**
-     * {@inheritdoc}
-     */
     public function pluginDetails(): array
     {
         return [
@@ -29,24 +20,19 @@ class Plugin extends PluginBase
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function register(): void
     {
-        $this->app->register(GlideServiceProvider::class);
+        $this->app->register(ServiceProvider::class);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function registerMarkupTags(): array
     {
         return [
             'filters' => [
-                'thumb' => function (string $path = null, array $options = [], string $servername = null): string {
+                'thumb' => static function (?string $path = null, array $options = [], ?string $servername = null): string {
                     /** @var GlideHelper $helper */
                     $helper = resolve(GlideHelper::class);
+
                     return $helper->createThumbnail($path, $options, $servername);
                 },
             ],
