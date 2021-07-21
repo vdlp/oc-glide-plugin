@@ -4,3 +4,4 @@
 2.0.0: !!! October Build 1.1.0 required, make laravel 6 compatible.
 2.0.1: Update plugin dependencies
 3.0.0: !!! Drop support for PHP 7.1 (minimum required PHP version 7.4) - Review implementation (see README.md)
+3.0.1: Add missing CHANGELOG file

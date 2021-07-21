@@ -1,6 +1,8 @@
 # Vdlp.Glide
 
-Glide is a wonderfully easy on-demand image manipulation library written in PHP. Its straightforward API is exposed via HTTP, similar to cloud image processing services like Imgix and Cloudinary. Glide leverages powerful libraries like Intervention Image (for image handling and manipulation) and Flysystem (for file system abstraction).
+Glide is a wonderfully easy on-demand image manipulation library written in PHP. 
+Its straightforward API is exposed via HTTP, similar to cloud image processing services like Imgix and Cloudinary. 
+Glide leverages powerful libraries like Intervention Image (for image handling and manipulation) and Flysystem (for file system abstraction).
 
 ## Requirements
 
@@ -30,17 +32,21 @@ GLIDE_IMAGE_DRIVER = "gd"
 GLIDE_SIGN_KEY = "[YOUR SIGN KEY HERE]"
 ```
 
+> We recommend using a 128 character (or larger) signing key to prevent trivial key attacks. Consider using a package like [CryptoKey](https://github.com/AndrewCarterUK/CryptoKey) to generate a secure key.
+
+For more details about the security and why a sign key is used, check [glide.thephpleague.com](https://glide.thephpleague.com/2.0/config/security/).
+
 Add an url to your disk in the `config/filesystem.php` to display the images properly, for example:
 
-```
+```diff
     ...
 
     'disks' => [
 
         'local' => [
             'driver' => 'local',
-            'root'   => storage_path('app'),
-            'url' => 'storage/app/',
+            'root' => storage_path('app'),
++           'url' => 'storage/app/',
         ],
 
     ],
@@ -64,4 +70,5 @@ Here you can see some basic examples of how to use this plugin. Out of the box, 
 
 ## Questions? Need help?
 
-If you have any question about how to use this plugin, please don't hesitate to contact us at octobercms@vdlp.nl. We're happy to help you. You can also visit the support forum and drop your questions/issues there.
+If you have any question about how to use this plugin, please don't hesitate to contact us at octobercms@vdlp.nl. 
+We're happy to help you. You can also visit the support forum and drop your questions/issues there.
