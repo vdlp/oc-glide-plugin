@@ -38,7 +38,7 @@ For more details about the security and why a sign key is used, check [glide.the
 
 Add an url to your disk in the `config/filesystem.php` to display the images properly, for example:
 
-```
+```diff
     ...
 
     'disks' => [
@@ -46,7 +46,7 @@ Add an url to your disk in the `config/filesystem.php` to display the images pro
         'local' => [
             'driver' => 'local',
             'root'   => storage_path('app'),
-            'url' => 'storage/app/',
++           'url' => 'storage/app/',
         ],
 
     ],
