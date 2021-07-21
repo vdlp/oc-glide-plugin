@@ -45,7 +45,7 @@ Add an url to your disk in the `config/filesystem.php` to display the images pro
 
         'local' => [
             'driver' => 'local',
-            'root'   => storage_path('app'),
+            'root' => storage_path('app'),
 +           'url' => 'storage/app/',
         ],
 
