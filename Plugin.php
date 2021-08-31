@@ -6,6 +6,7 @@ namespace Vdlp\Glide;
 
 use System\Classes\PluginBase;
 use Vdlp\Glide\Classes\GlideHelper;
+use Vdlp\Glide\ServiceProviders\GlideServiceProvider;
 
 class Plugin extends PluginBase
 {
@@ -22,7 +23,7 @@ class Plugin extends PluginBase
 
     public function register(): void
     {
-        $this->app->register(ServiceProvider::class);
+        $this->app->register(GlideServiceProvider::class);
     }
 
     public function registerMarkupTags(): array

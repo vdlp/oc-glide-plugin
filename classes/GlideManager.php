@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace Vdlp\Glide\Classes;
 
 use Illuminate\Contracts\Config\Repository;
+use Illuminate\Filesystem\FilesystemManager;
 use InvalidArgumentException;
 use League\Glide\Server;
 use League\Glide\ServerFactory;
-use October\Rain\Filesystem\FilesystemManager;
 
 class GlideManager
 {

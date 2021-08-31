@@ -2,24 +2,24 @@
 
 declare(strict_types=1);
 
-namespace Vdlp\Glide;
+namespace Vdlp\Glide\ServiceProviders;
 
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Container\Container;
-use October\Rain\Filesystem\FilesystemManager;
+use Illuminate\Filesystem\FilesystemManager;
 use October\Rain\Support\ServiceProvider as ServiceProviderBase;
 use Vdlp\Glide\Classes\GlideHelper;
 use Vdlp\Glide\Classes\GlideManager;
 
-class ServiceProvider extends ServiceProviderBase
+final class GlideServiceProvider extends ServiceProviderBase
 {
     public function boot(): void
     {
         $this->publishes([
-            __DIR__ . '/config.php' => config_path('glide.php'),
+            __DIR__ . '/../config.php' => config_path('glide.php'),
         ], 'config');
 
-        $this->mergeConfigFrom(__DIR__ . '/config.php', 'glide');
+        $this->mergeConfigFrom(__DIR__ . '/../config.php', 'glide');
     }
 
     public function register(): void
