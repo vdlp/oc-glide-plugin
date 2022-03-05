@@ -6,11 +6,10 @@ namespace Vdlp\Glide\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use League\Glide\Filesystem\FileNotFoundException;
 use League\Glide\Responses\LaravelResponseFactory;
-use League\Glide\Signatures\SignatureException;
 use League\Glide\Signatures\SignatureFactory;
 use Symfony\Component\HttpFoundation\Response;
+use Throwable;
 use Vdlp\Glide\Classes\GlideManager;
 
 final class Image extends Controller
@@ -34,7 +33,7 @@ final class Image extends Controller
         try {
             $signature = SignatureFactory::create(config(sprintf('glide.servers.%s.sign_key', $servername)));
             $signature->validateRequest(str_replace('%20', ' ', $this->request->path()), $this->request->all());
-        } catch (SignatureException $e) {
+        } catch (Throwable $throwable) {
             return new Response('Not Found', 404);
         }
 
@@ -44,7 +43,7 @@ final class Image extends Controller
         try {
             return $this->glideManager->server($servername)
                 ->getImageResponse($path, $this->request->all());
-        } catch (FileNotFoundException $e) {
+        } catch (Throwable $throwable) {
             return new Response('Not Found', 404);
         }
     }

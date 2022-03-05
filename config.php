@@ -66,25 +66,29 @@ return [
             // see http://glide.thephpleague.com/1.0/config/defaults-and-presets/
             'defaults' => [
                 // Examples:
-                // 'mark' => 'logo.png',
-                // 'markw' => '30w',
-                // 'markpad' => '5w',
+                /*
+                'mark' => 'logo.png',
+                'markw' => '30w',
+                'markpad' => '5w',
+                */
             ],
 
             // Preset image manipulations
             // see http://glide.thephpleague.com/1.0/config/defaults-and-presets/
             'presets' => [
                 // Examples:
-                // 'small' => [
-                //     'w' => 200,
-                //     'h' => 200,
-                //     'fit' => 'crop',
-                // ],
-                // 'medium' => [
-                //     'w' => 600,
-                //     'h' => 400,
-                //     'fit' => 'crop',
-                // ],
+                /*
+                'small' => [
+                    'w' => 200,
+                    'h' => 200,
+                    'fit' => 'crop',
+                ],
+                'medium' => [
+                    'w' => 600,
+                    'h' => 400,
+                    'fit' => 'crop',
+                ],
+                */
             ],
         ],
     ],

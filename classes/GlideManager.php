@@ -59,7 +59,7 @@ class GlideManager
     }
 
     /**
-     * @throws
+     * @throws InvalidArgumentException
      */
     public function getServerConfig(?string $name = null): array
     {
@@ -68,7 +68,7 @@ class GlideManager
         $configurations = $this->config->get('glide.servers');
 
         if (!isset($configurations[$name]) || !is_array($configurations[$name])) {
-            throw new InvalidArgumentException("Server $name is not properly configured.");
+            throw new InvalidArgumentException(sprintf('Server %s is not properly configured.', $name));
         }
 
         $config = $configurations[$name];
@@ -92,6 +92,9 @@ class GlideManager
         return $config;
     }
 
+    /**
+     * @throws InvalidArgumentException
+     */
     public function getCacheUrlPath(?string $name = null): string
     {
         $name = $name ?: $this->getDefaultServer();
@@ -99,7 +102,7 @@ class GlideManager
         $configurations = $this->config->get('glide.servers');
 
         if (!isset($configurations[$name]) || !is_array($configurations[$name])) {
-            throw new InvalidArgumentException("Server $name is not properly configured.");
+            throw new InvalidArgumentException(sprintf('Server %s is not properly configured.', $name));
         }
 
         $config = $configurations[$name];
@@ -112,6 +115,9 @@ class GlideManager
         return '';
     }
 
+    /**
+     * @throws InvalidArgumentException
+     */
     protected function makeServer(string $name): Server
     {
         $config = $this->getServerConfig($name);

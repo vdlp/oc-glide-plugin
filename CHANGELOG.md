@@ -4,15 +4,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
-### Removed
-- Drop support for October CMS 1.1 and lower.
+## [3.1.0] - 2022-03-05
+
+- __!!! October 2.x required__
+- Add .gitattributes file.
+- Update composer version constraints for composer/installers package.
+- Add version constraint for october/system.
 
 ## [3.0.1] - 2021-07-21
+
 ### Added
 - Add missing CHANGELOG file.
 
 ## [3.0.0] - 2021-07-06
+
 ### Added
 - Add Sign Key implementation (please add `GLIDE_SIGN_KEY` to your `.env`)
 
