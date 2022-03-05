@@ -29,12 +29,12 @@ class GlideHelper
                 ->makeImage($path, $options);
 
             $factory = UrlBuilderFactory::create(
-                '/images/' . ($servername ?? 'main') . '/',
+                '/images/' . $servername . '/',
                 config(sprintf('glide.servers.%s.sign_key', $servername))
             );
 
             return $factory->getUrl($path, $options);
-        } catch (Throwable $e) {
+        } catch (Throwable $throwable) {
             return '';
         }
     }
