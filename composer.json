@@ -15,6 +15,12 @@
         "league/glide-laravel": "^1.0",
         "october/system": "^2.0"
     },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://gateway.octobercms.com"
+        }
+    ],
     "archive": {
         "exclude": [
             ".gitignore",
