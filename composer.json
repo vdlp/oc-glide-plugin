@@ -13,7 +13,7 @@
         "php": "^7.4 || ^8.0",
         "composer/installers": "^1.0 || ^2.0",
         "league/glide-laravel": "^1.0",
-        "october/system": "^2.0"
+        "october/system": "^2.0 || ^3.0"
     },
     "repositories": [
         {
