@@ -20,7 +20,7 @@ composer require vdlp/oc-glide-plugin
 To configure this plugin execute the following command:
 
 ```
-php artisan vendor:publish --provider="Vdlp\Glide\ServiceProvider" --tag="config"
+php artisan vendor:publish --provider="Vdlp\Glide\ServiceProviders\GlideServiceProvider" --tag="config"
 ```
 
 This will create a `config/glide.php` file in your app where you can modify the configuration.
