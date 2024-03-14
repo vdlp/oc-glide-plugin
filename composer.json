@@ -15,10 +15,19 @@
         "league/glide-laravel": "^1.0",
         "october/rain": "^2.0 || ^3.0"
     },
+    "require-dev": {
+        "ergebnis/composer-normalize": "^2.42"
+    },
     "repositories": [
         {
             "type": "composer",
             "url": "https://gateway.octobercms.com"
         }
-    ]
+    ],
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true,
+            "ergebnis/composer-normalize": true
+        }
+    }
 }
