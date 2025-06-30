@@ -10,10 +10,11 @@
         }
     ],
     "require": {
-        "php": "^8.0.2",
+        "php": "^7.4 || ^8.0",
         "composer/installers": "^1.0 || ^2.0",
-        "league/glide-laravel": "^1.0",
-        "october/rain": "^2.0 || ^3.0"
+        "league/glide": "^2.0",
+        "league/glide-symfony": "^2.0",
+        "october/rain": "^2.0 || ^3.0 || ^4.0"
     },
     "require-dev": {
         "ergebnis/composer-normalize": "^2.42"
@@ -29,5 +30,12 @@
             "composer/installers": true,
             "ergebnis/composer-normalize": true
         }
+    },
+    "archive": {
+        "exclude": [
+            ".gitignore",
+            ".github",
+            ".idea/"
+        ]
     }
 }
