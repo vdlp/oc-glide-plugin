@@ -6,7 +6,7 @@ Glide leverages powerful libraries like Intervention Image (for image handling a
 
 ## Requirements
 
-* PHP 7.4 or higher
+* PHP 8.0.2 or higher
 * October CMS 2.x or higher
 
 ## Installation
