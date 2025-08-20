@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+## [4.0.0] - 2025-08-20
+
+- Add support for October CMS 4.x
+- Minimal version of PHP required is 8.0.2
+  - Requires `ext-exif` extension
+- Remove support for October CMS 2.x
+
 ## [3.2.0] - 2022-05-27
 
 - Add support for October CMS 3.0

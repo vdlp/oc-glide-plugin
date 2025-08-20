@@ -6,7 +6,7 @@ namespace Vdlp\Glide\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use League\Glide\Responses\LaravelResponseFactory;
+use League\Glide\Responses\SymfonyResponseFactory;
 use League\Glide\Signatures\SignatureFactory;
 use Symfony\Component\HttpFoundation\Response;
 use Throwable;
@@ -16,12 +16,12 @@ final class Image extends Controller
 {
     private Request $request;
     private GlideManager $glideManager;
-    private LaravelResponseFactory $responseFactory;
+    private SymfonyResponseFactory $responseFactory;
 
     public function __construct(
         Request $request,
         GlideManager $glideManager,
-        LaravelResponseFactory $responseFactory
+        SymfonyResponseFactory $responseFactory
     ) {
         $this->request = $request;
         $this->glideManager = $glideManager;
@@ -37,12 +37,11 @@ final class Image extends Controller
             return new Response('Not Found', 404);
         }
 
-        $this->glideManager->server($servername)
-            ->setResponseFactory($this->responseFactory);
+        $server = $this->glideManager->server($servername);
+        $server->setResponseFactory($this->responseFactory);
 
         try {
-            return $this->glideManager->server($servername)
-                ->getImageResponse($path, $this->request->all());
+            return $server->getImageResponse($path, $this->request->all());
         } catch (Throwable $throwable) {
             return new Response('Not Found', 404);
         }

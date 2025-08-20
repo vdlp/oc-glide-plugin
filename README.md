@@ -6,8 +6,10 @@ Glide leverages powerful libraries like Intervention Image (for image handling a
 
 ## Requirements
 
-* PHP 7.4 or higher
-* October CMS 2.x
+* PHP 8.0.2 or higher
+* PHP extensions:
+  * ext-exif
+* October CMS 3.x or higher
 
 ## Installation
 
@@ -20,7 +22,7 @@ composer require vdlp/oc-glide-plugin
 To configure this plugin execute the following command:
 
 ```
-php artisan vendor:publish --provider="Vdlp\Glide\ServiceProvider" --tag="config"
+php artisan vendor:publish --provider="Vdlp\Glide\ServiceProviders\GlideServiceProvider" --tag="config"
 ```
 
 This will create a `config/glide.php` file in your app where you can modify the configuration.
@@ -28,8 +30,8 @@ This will create a `config/glide.php` file in your app where you can modify the 
 Modify the environment file by adding the following lines:
 
 ```
-GLIDE_IMAGE_DRIVER = "gd"
-GLIDE_SIGN_KEY = "[YOUR SIGN KEY HERE]"
+GLIDE_IMAGE_DRIVER="gd"
+GLIDE_SIGN_KEY="[YOUR SIGN KEY HERE]"
 ```
 
 > We recommend using a 128 character (or larger) signing key to prevent trivial key attacks. Consider using a package like [CryptoKey](https://github.com/AndrewCarterUK/CryptoKey) to generate a secure key.

@@ -7,6 +7,7 @@ namespace Vdlp\Glide\Classes;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Filesystem\FilesystemManager;
 use InvalidArgumentException;
+use League\Glide\Responses\SymfonyResponseFactory;
 use League\Glide\Server;
 use League\Glide\ServerFactory;
 
@@ -127,6 +128,8 @@ class GlideManager
 
     protected function createServer(array $config): Server
     {
+        $config['response'] = new SymfonyResponseFactory();
+
         return ServerFactory::create($config);
     }
 }
