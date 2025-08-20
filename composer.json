@@ -11,6 +11,7 @@
     ],
     "require": {
         "php": "^8.0.2",
+        "ext-exif": "*",
         "composer/installers": "^1.0 || ^2.0",
         "league/glide": "^2.0",
         "league/glide-symfony": "^2.0",
