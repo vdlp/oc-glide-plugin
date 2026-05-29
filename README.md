@@ -9,7 +9,7 @@ Glide leverages powerful libraries like Intervention Image (for image handling a
 * PHP 8.2 or higher
 * PHP extensions:
   * ext-exif
-* October CMS 3.x, 4.x, 4.1.x or 4.2.x
+* October 4.1.x or higher
 
 ## Installation
 
