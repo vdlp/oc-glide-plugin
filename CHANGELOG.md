@@ -6,6 +6,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [5.0.0] - 2026-05-29
+
+### Added
+- Support for October CMS 4.1 and higher
+
+### Changed
+- Minimum required PHP version is now 8.2 (Glide v3 requirement)
+- Bump `october/rain` to `^4.1`
+- Bump `league/glide` to `^3.0` (Glide v3, intervention/image v3)
+- Bump `league/glide-symfony` to `^2.1` (first stable release allowing Glide v3)
+
+### Removed
+- Support for October CMS 3.x and 4.0
+
 ## [4.0.0] - 2025-08-20
 
 - Add support for October CMS 4.x
