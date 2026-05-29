@@ -6,10 +6,10 @@ Glide leverages powerful libraries like Intervention Image (for image handling a
 
 ## Requirements
 
-* PHP 8.0.2 or higher
+* PHP 8.2 or higher
 * PHP extensions:
   * ext-exif
-* October CMS 3.x or higher
+* October CMS 3.x, 4.x, 4.1.x or 4.2.x
 
 ## Installation
 
@@ -36,7 +36,7 @@ GLIDE_SIGN_KEY="[YOUR SIGN KEY HERE]"
 
 > We recommend using a 128 character (or larger) signing key to prevent trivial key attacks. Consider using a package like [CryptoKey](https://github.com/AndrewCarterUK/CryptoKey) to generate a secure key.
 
-For more details about the security and why a sign key is used, check [glide.thephpleague.com](https://glide.thephpleague.com/2.0/config/security/).
+For more details about the security and why a sign key is used, check [glide.thephpleague.com](https://glide.thephpleague.com/3.0/config/security/).
 
 Add an url to your disk in the `config/filesystem.php` to display the images properly, for example:
 
