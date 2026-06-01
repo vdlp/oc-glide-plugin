@@ -22,51 +22,63 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [4.0.0] - 2025-08-20
 
-- Add support for October CMS 4.x
-- Minimal version of PHP required is 8.0.2
-  - Requires `ext-exif` extension
-- Remove support for October CMS 2.x
+### Added
+- Support for October CMS 4.x
+
+### Changed
+- Minimum required PHP version is now 8.0.2 (requires the `ext-exif` extension)
+
+### Removed
+- Support for October CMS 2.x
 
 ## [3.2.0] - 2022-05-27
 
-- Add support for October CMS 3.0
+### Added
+- Support for October CMS 3.0
 
 ## [3.1.0] - 2022-03-05
 
-- __!!! October 2.x required__
-- Add .gitattributes file.
-- Update composer version constraints for composer/installers package.
-- Add version constraint for october/system.
+### Added
+- `.gitattributes` file
+- Version constraint for `october/system`
+
+### Changed
+- October CMS 2.x is now required
+- Update composer version constraints for the `composer/installers` package
 
 ## [3.0.1] - 2021-07-21
 
 ### Added
-- Add missing CHANGELOG file.
+- Missing CHANGELOG file
 
 ## [3.0.0] - 2021-07-06
 
 ### Added
-- Add Sign Key implementation (please add `GLIDE_SIGN_KEY` to your `.env`)
+- Sign Key implementation (add `GLIDE_SIGN_KEY` to your `.env`)
 
 ### Changed
-- Improved plugin documentation.
+- Improved plugin documentation
 
 ### Removed
-- Drop support for PHP 7.1 (minimum required PHP version 7.4)
+- Support for PHP 7.1 (minimum required PHP version is now 7.4)
 
 ## [2.0.0] - 2021-05-28
 
-- __!!! October Build 1.1.0 required__
-- Make laravel 6 compatible.
+### Changed
+- October Build 1.1.0 is now required
+- Make the plugin Laravel 6 compatible
 
 ## [1.1.0] - 2019-03-22
 
-- Move thumbnail generation logic to a (re-usable) Helper.
+### Changed
+- Move thumbnail generation logic to a (re-usable) helper
 
 ## [1.0.1] - 2019-01-25
 
-- Catch exception when file cannot be found or image could not be created.
+### Fixed
+- Catch exception when a file cannot be found or an image could not be created
 
 ## [1.0.0] - 2019-01-22
 
+### Added
 - First version of Vdlp.Glide
