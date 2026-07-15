@@ -3,6 +3,7 @@
     "description": "Allows developers to easily manipulate images in October CMS powered websites.",
     "license": "GPL-2.0",
     "type": "october-plugin",
+    "abandoned": true,
     "authors": [
         {
             "name": "Van der Let & Partners",
